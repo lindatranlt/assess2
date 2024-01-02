@@ -35,7 +35,8 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((runningTotal, food) => runningTotal + food.price, 0);
+console.log(summedPrice);
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,7 +55,11 @@ const cart = [
 */
 
 //CODE HERE
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    const taxedPrice = cartTotal * (1 + tax);
+    const finalPrice = taxedPrice - couponValue;
+    return finalPrice;
+  };
 
 
 //////////////////PROBLEM 3////////////////////
@@ -78,7 +83,15 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+    Name - string 
+    Email address - string
+    Address - string
+    phone number - string
+
+    I chose strings for everything because that is what the data for these are typically stored in. I chose these properties
+    because it is valuable customer knowledge when checking out of a webpage. 
+
+
 
 */
 
@@ -88,3 +101,11 @@ const cart = [
 */
 
 //CODE HERE
+
+const customer = {
+    firstName : 'Linda',
+    emailAddress :'tranlin.lt@gmail.com',
+    address : '123 Lalaland Dr. San Francisco, CA 91234',
+    phoneNumber : '000-000-0000',
+}
+console.log(customer);
