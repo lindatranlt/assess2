@@ -31,6 +31,16 @@
 */
 
 //CODE HERE
+const pizza =
+    {   
+        name:'Mushroom', 
+        price:8,
+        category:'Vegetarian',
+        popularity:3,
+        rating:8,
+        tags:['Vegetarian','Vegan'],
+
+    };
 
 
 
@@ -43,7 +53,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity);
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +63,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1]);
 
 /*
     Third, destructure the price off of the
@@ -63,7 +73,8 @@
 */
 
 //CODE HERE
-
+const {price} = pizza;
+console.log(price);
 
 /*
     Fourth, and last, destructure the category
@@ -73,6 +84,8 @@
 */
 
 //CODE HERE
+const {category} = pizza;
+console.log(category);
 
 
 //////////////////PROBLEM 3////////////////////
@@ -88,7 +101,7 @@
 */
 
 //CODE HERE
-
+foodArr = [{price:10, popularity:1, rating:9, tags:'dairy free'}];
 
 
 //////////////////PROBLEM 4////////////////////
@@ -108,8 +121,10 @@
 */
 
 //CODE HERE
+const filterArr = (a) => a === 'dairy free';
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(filterArr);
+console.log(filteredFood);
 
 
 
@@ -149,6 +164,15 @@
 
 //CODE HERE
 
+const filterByProperty = (property, number) => {
+    let filteredArray = [];
+    filteredArray = foodArr.filter(a => {
+      return a[property] > number;
+    });
+  
+    return filteredArray;
+  };
+
 
 /*
     Invoke the `filterByProperty` function, passing
@@ -157,4 +181,7 @@
     You'll have to console.log to see the filtered array
 */
 
-//CODE HERE
+const checkingAns = filterByProperty(price,4);
+console.log(checkingAns);
+
+//*******having trouble with the last couple of problems. Need to look into callback functions.
